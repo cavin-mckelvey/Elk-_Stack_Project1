@@ -1,0 +1,195 @@
+{
+    "name": "ELK-nsg",
+    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg",
+    "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "location": "canadaeast",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "1ba42c7e-52b8-4e6e-ade5-53ac1dcb597d",
+        "securityRules": [
+            {
+                "name": "SSH",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/securityRules/SSH",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "TCP",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "22",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 300,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "elk",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/securityRules/elk",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "port 5601",
+                    "protocol": "TCP",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "5601",
+                    "sourceAddressPrefix": "174.89.67.86",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 310,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "defaultSecurityRules": [
+            {
+                "name": "AllowVnetInBound",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/defaultSecurityRules/AllowVnetInBound",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowAzureLoadBalancerInBound",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "AzureLoadBalancer",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllInBound",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/defaultSecurityRules/DenyAllInBound",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowVnetOutBound",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/defaultSecurityRules/AllowVnetOutBound",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowInternetOutBound",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/defaultSecurityRules/AllowInternetOutBound",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "Internet",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllOutBound",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELK-nsg/defaultSecurityRules/DenyAllOutBound",
+                "etag": "W/\"782f8d2b-1dd5-4e95-93be-b413498c751b\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "networkInterfaces": [
+            {
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/elk528"
+            }
+        ]
+    }
+}

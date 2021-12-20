@@ -1,0 +1,77 @@
+{
+    "name": "Jump-Box-Provisioner",
+    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Jump-Box-Provisioner",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus",
+    "properties": {
+        "vmId": "f13e458c-19f1-4ed5-92fb-649e97867d1d",
+        "hardwareProfile": {
+            "vmSize": "Standard_B1s"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "18_04-lts-gen2",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "Jump-Box-Provisioner_OsDisk_1_6ed68e9636894c318b4d8f6768372beb",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/REDTEAM/providers/Microsoft.Compute/disks/Jump-Box-Provisioner_OsDisk_1_6ed68e9636894c318b4d8f6768372beb"
+                },
+                "diskSizeGB": 30
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "Jump-Box-Provisioner",
+            "adminUsername": "azadmin",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/azadmin/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAyGZPiKgDO4tfcxXgqEDHOSdG3HETR4MruEiTEpf5cNbUjLZ3fPDc+c8KnrmNaLpMFX23FI1cYplpsGwr6Ge+Az7Z2bJ6Uhg+2z65NcHJGqRl0vt6jLiXM9AkogeF1qZ/UIrJ+ueXrT7szrpBBxcWPZrN3YzZiQJX60RjpDdkQpZz0QLTlfS9DEoEDTWMvqeMW87lDw5aQOToPerV5RW/prRNJiQ9RPp76gOzIxAiImpc7ajJ8lRFLP6KevgCQOqSIQlDDuqHtaGSo4hh1i7dQAh0ldjYxfP8gEd4cikt8A0yQL7QcmoMwhtLykAbym88yWKBVUVS2172donMmYt3JDFgrTn1Pa/Ykvq18PUHFTvqnQtVutAkyz14vQSQN/PEbnAaAZui/XrWtpltp4oDBFo2laWk40b4o25wHboD3LrPIaaQUf/Vl0RXKIbkBvlTs+TgyJcx43GcueF276U9qH5xp5nxuaFk4pGKeswuN0w++IHpoIRWX34jTBvpZkM= cavin@LAPTOP-C0HCRQBP"
+                        }
+                    ]
+                }
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/jump-box-provisioner608"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    },
+    "resources": [
+        {
+            "name": "enablevmaccess",
+            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Jump-Box-Provisioner/extensions/enablevmaccess",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "eastus",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "VMAccessForLinux",
+                "typeHandlerVersion": "1.4",
+                "settings": {}
+            }
+        }
+    ]
+}

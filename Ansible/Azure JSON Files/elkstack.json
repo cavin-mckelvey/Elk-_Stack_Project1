@@ -1,0 +1,34 @@
+{
+    "name": "Elk_stack",
+    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/virtualNetworks/Elk_stack",
+    "etag": "W/\"20884d84-b6e3-4c6a-b799-9096a3302652\"",
+    "type": "Microsoft.Network/virtualNetworks",
+    "location": "canadaeast",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "af9ab2a0-ded9-47c3-821b-3f9c9754fa85",
+        "addressSpace": {
+            "addressPrefixes": [
+                "10.1.0.0/16"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "default",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/virtualNetworks/Elk_stack/subnets/default",
+                "etag": "W/\"20884d84-b6e3-4c6a-b799-9096a3302652\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "10.1.0.0/24",
+                    "ipConfigurations": [
+                        {
+                            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/elk528/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            }
+        ]
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "name": "Cavin-Lb",
+    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb",
+    "etag": "W/\"d398e5d5-2693-432e-99e8-5777aef8d7b0\"",
+    "type": "Microsoft.Network/loadBalancers",
+    "location": "eastus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "bbe7b649-312a-49d0-bc56-4805572e0d17",
+        "frontendIPConfigurations": [
+            {
+                "name": "Cavin-pub",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/frontendIPConfigurations/Cavin-pub",
+                "etag": "W/\"d398e5d5-2693-432e-99e8-5777aef8d7b0\"",
+                "type": "Microsoft.Network/loadBalancers/frontendIPConfigurations",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "privateIPAllocationMethod": "Dynamic",
+                    "publicIPAddress": {
+                        "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/publicIPAddresses/Cavinpub-ip"
+                    },
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/loadBalancingRules/Cavin_LBR"
+                        }
+                    ]
+                }
+            }
+        ],
+        "backendAddressPools": [
+            {
+                "name": "Cavin-pool",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/backendAddressPools/Cavin-pool",
+                "etag": "W/\"d398e5d5-2693-432e-99e8-5777aef8d7b0\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "backendIPConfigurations": [
+                        {
+                            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web1748/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web2374/ipConfigurations/ipconfig1"
+                        }
+                    ],
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/loadBalancingRules/Cavin_LBR"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/backendAddressPools"
+            }
+        ],
+        "loadBalancingRules": [
+            {
+                "name": "Cavin_LBR",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/loadBalancingRules/Cavin_LBR",
+                "etag": "W/\"d398e5d5-2693-432e-99e8-5777aef8d7b0\"",
+                "type": "Microsoft.Network/loadBalancers/loadBalancingRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "frontendIPConfiguration": {
+                        "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/frontendIPConfigurations/Cavin-pub"
+                    },
+                    "frontendPort": 80,
+                    "backendPort": 80,
+                    "enableFloatingIP": false,
+                    "idleTimeoutInMinutes": 4,
+                    "protocol": "Tcp",
+                    "loadDistribution": "SourceIPProtocol",
+                    "backendAddressPool": {
+                        "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/backendAddressPools/Cavin-pool"
+                    },
+                    "probe": {
+                        "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/probes/Port_80"
+                    }
+                }
+            }
+        ],
+        "probes": [
+            {
+                "name": "Port_80",
+                "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/probes/Port_80",
+                "etag": "W/\"d398e5d5-2693-432e-99e8-5777aef8d7b0\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "Tcp",
+                    "port": 80,
+                    "intervalInSeconds": 5,
+                    "numberOfProbes": 2,
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/Cavin-Lb/loadBalancingRules/Cavin_LBR"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/probes"
+            }
+        ],
+        "inboundNatRules": [],
+        "inboundNatPools": []
+    },
+    "sku": {
+        "name": "Basic"
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "name": "Web1",
+    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Web1",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus",
+    "properties": {
+        "vmId": "adab14c9-346e-453f-9f19-9a7b0b917cd8",
+        "availabilitySet": {
+            "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Compute/availabilitySets/WEB-SET"
+        },
+        "hardwareProfile": {
+            "vmSize": "Standard_B1ms"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "18_04-lts-gen2",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "Web1_OsDisk_1_e94de35bc7c448598170bf53352b158d",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/REDTEAM/providers/Microsoft.Compute/disks/Web1_OsDisk_1_e94de35bc7c448598170bf53352b158d"
+                },
+                "diskSizeGB": 30
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "Web1",
+            "adminUsername": "sysadmin",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/sysadmin/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyE7m3JZYSGMwKlU500Zx08fouuYCkaNFPrsiYtVAuGFpaE56PHq65h3xwNzrKswCZixFEgKpWlEnYjo7zo0sCQSOC+o/jqqUin2Z9aYpj1ymBvrPRc/IZfAwwLOzVATJlJcGJx9GGSiXbJd+AFvwNMYv0b/XenaAFdqeSI+ysJyTlbaIwGOOapx4U94M9DULtmZNrvG5T+vTLKWHIvCBlPC3cm7YKPiVSIGaEl4y45+Y+zY+hHU4mTdlEFXxYqnyWHLqdA+eS9JMI6NaDeOs0G2YLMexdO0KcPHQ+7JvQ2WwGOsbiff3ntqp4me2dsLlDMFSxDo+FY0NnB81Lw62mzBCyh6RV3VQ32OKf1rFWXBoRRK8KXIkfjNovdcCLp13VEwfoZzqR+5+7MG5NsRbozzKrybduesJxdlptWGZe36GiYvxFSQwROSQMr9IbJWa3w7oVbCU0Oresr2pBs7K7LTkvRkbUpCPw+i55lzYyq3r6zoY2aN844KzbAJL2Jvs= root@1b1e597b0ec4"
+                        }
+                    ]
+                }
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/145078ff-acd2-4eae-a59c-97d2eb9f7727/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web1748"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    }
+}
