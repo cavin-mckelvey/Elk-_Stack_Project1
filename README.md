@@ -89,7 +89,11 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include private IP addresses
 - Run the playbook, and navigate to http://[your.VM.IP]:5601/app/kibana to check that the installation worked as expected.
 
+Filebeat:
 ![](https://github.com/cavin-mckelvey/Elk-_Stack_Project1/blob/main/Diagrams/filebeat.png)
+
+Metricbeat:
+![](https://github.com/cavin-mckelvey/Elk-_Stack_Project1/blob/main/Diagrams/metricbeat.png)
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_/etc/ansible
