@@ -6,7 +6,40 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml file may be used to install only certain pieces of it, such as Filebeat.
 
-  (https://github.com/cavin-mckelvey/Elk-_Stack_Project1/blob/main/Ansible/ansible_config.yml)
+`
+---
+- name: Config Web VM with Docker
+  hosts: webservers
+  become: true
+  tasks:
+    - name: docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
+
+    - name: Install pip3
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Install Docker python module
+      pip:
+        name: docker
+        state: present
+
+    - name: download and launch a docker web container
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa
+        state: started
+        restart_policy: always
+        published_ports: 80:80
+
+    - name: Enable docker service
+      systemd:
+        name: docker
+        enabled: yes
 
 This document contains the following details:
 - Description of the Topology
@@ -14,7 +47,8 @@ This document contains the following details:
 - ELK Configuration
   - Beats in Use
   - Machines Being Monitored
-- How to Use the Ansible Build
+- How to Use the Ansible Build`
+
 
 
 ### Description of the Topology
