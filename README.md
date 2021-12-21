@@ -89,6 +89,8 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include private IP addresses
 - Run the playbook, and navigate to http://[your.VM.IP]:5601/app/kibana to check that the installation worked as expected.
 
+[](https://github.com/cavin-mckelvey/Elk-_Stack_Project1/blob/main/Diagrams/filebeat.png)
+
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_/etc/ansible
 You'll need to modify the private IP of the machines you'd like to configure in the /etc/ansible/ansible.cfg file.   How do I specify which machine to install the ELK server on versus which to install Filebeat on? update the /etc/ansible/hosts file.   
